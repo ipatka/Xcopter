@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		923902DC1ABE0A0600918C83 /* CppHelper.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 923902DA1ABE0A0600918C83 /* CppHelper.cpp */; };
 		9246B63F1ABD25520014641D /* Binary.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9246B63B1ABD25520014641D /* Binary.cpp */; };
 		9246B6401ABD25520014641D /* Peripheral.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9246B63D1ABD25520014641D /* Peripheral.cpp */; };
 		9246B6451ABD30370014641D /* Quadcopter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9246B6431ABD30370014641D /* Quadcopter.cpp */; };
@@ -16,6 +17,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		923902DA1ABE0A0600918C83 /* CppHelper.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CppHelper.cpp; sourceTree = "<group>"; };
+		923902DB1ABE0A0600918C83 /* CppHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CppHelper.h; sourceTree = "<group>"; };
 		9246B63B1ABD25520014641D /* Binary.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Binary.cpp; sourceTree = "<group>"; };
 		9246B63C1ABD25520014641D /* Binary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Binary.h; sourceTree = "<group>"; };
 		9246B63D1ABD25520014641D /* Peripheral.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Peripheral.cpp; sourceTree = "<group>"; };
@@ -50,10 +53,12 @@
 			isa = PBXGroup;
 			children = (
 				C085E4661ABD05610072C424 /* main.cpp */,
+				923902DA1ABE0A0600918C83 /* CppHelper.cpp */,
+				923902DB1ABE0A0600918C83 /* CppHelper.h */,
 				9246B6431ABD30370014641D /* Quadcopter.cpp */,
+				9246B6441ABD30370014641D /* Quadcopter.h */,
 				925DA0F81ABD4D8E0019B74B /* MotorControl.cpp */,
 				925DA0F91ABD4D8E0019B74B /* MotorControl.h */,
-				9246B6441ABD30370014641D /* Quadcopter.h */,
 				9246B63B1ABD25520014641D /* Binary.cpp */,
 				9246B63C1ABD25520014641D /* Binary.h */,
 				9246B63D1ABD25520014641D /* Peripheral.cpp */,
@@ -198,6 +203,7 @@
 			files = (
 				9246B6451ABD30370014641D /* Quadcopter.cpp in Sources */,
 				C085E4671ABD05610072C424 /* main.cpp in Sources */,
+				923902DC1ABE0A0600918C83 /* CppHelper.cpp in Sources */,
 				C085E46A1ABD05610072C424 /* Makefile in Sources */,
 				925DA0FA1ABD4D8E0019B74B /* MotorControl.cpp in Sources */,
 				9246B63F1ABD25520014641D /* Binary.cpp in Sources */,

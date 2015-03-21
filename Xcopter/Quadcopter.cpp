@@ -16,6 +16,8 @@
 
 
 Quadcopter::Quadcopter(){
+    //constructor initializes all IO and peripherals
+    
     InitializeMotors();
     InitializePeripherals();
     //MotorControl motor_control = new MotorControl();
@@ -25,13 +27,25 @@ Quadcopter::~Quadcopter(){
     
 }
 
-void Quadcopter::Fly(Orientation *o){
-    orientation.throttle = o->throttle;
-    orientation.roll = o->roll;
-    orientation.pitch = o->pitch;
-    orientation.yaw = o->yaw;
+void Quadcopter::Fly(){
+   
+    //main quadcopter loop
+    //system has already been initialized
     
-    //give this to motor control
+    while (1) {
+        
+        //check for warnings
+        
+        //check for an instruction from rf peripheral
+        
+        //check current orientation from gyro peripheral
+        
+        //set motor control object with current and desired orientation
+        
+        //tell motor control to run loop
+        
+        
+    }
     
 }
 
