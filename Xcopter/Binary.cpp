@@ -9,11 +9,11 @@
 #include "Binary.h"
 
 
-void Binary::Binary(){
+Binary::Binary(){
     //constructor method
 }
 
-void Binary::~Binary(){
+Binary::~Binary(){
     //deconstructor method
 }
 
