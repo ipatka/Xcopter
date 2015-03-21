@@ -47,10 +47,15 @@ private:
     
     /*Private Instance Variables*/
     Orientation orientation;
-    //MotorControl motor_control;
+    MotorControl motor_control;
     
     
     /*Private Methods*/
+    
+    void EmergencyLand();
+    void SetOrientation(Orientation *o);
+    Orientation GetOrientation();
+    
     void InitializeMotors(void);
     void InitializePeripherals(void);
     
@@ -66,10 +71,8 @@ public:
     Quadcopter();
     ~Quadcopter();
     
-    void Fly(Orientation *o);
-    void EmergencyLand();
-    void SetOrientation(Orientation *o);
-    Orientation GetOrientation();
+    void Fly();
+   
    
 };
 
