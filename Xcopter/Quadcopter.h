@@ -12,6 +12,7 @@
 #include <stdio.h>
 #include "Binary.h"
 #include "Peripheral.h"
+#include "MotorControl.h"
 
 #include <avr/io.h>
 
@@ -37,10 +38,7 @@
 #define GYRO_READ_1 PIND0
 
 
-typedef struct{
-    char throttle;
-    char roll, pitch, yaw;
-}Orientation;
+
 
 
 class Quadcopter {

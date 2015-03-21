@@ -10,7 +10,8 @@ using namespace std;
 
 int main (void){
 
-
+    //init QuadCopter
+    //Quadcopter run();
     
     //should init peripherals...without need to make a peripheral object
     
