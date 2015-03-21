@@ -30,7 +30,7 @@
 # make debug = Start either simulavr or avarice as specified for debugging, 
 #              with avr-gdb or avr-insight as the front end for debugging.
 #
-# make filename.s = Just compile filename.c into the assembler code only.
+# make filename.s = Just compile filename.cpp into the assembler code only.
 #
 # make filename.i = Create a preprocessed source file for use in submitting
 #                   bug reports to the GCC project.
@@ -65,7 +65,7 @@ TARGET = main
 
 # List C source files here. (C dependencies are automatically generated.)
 
-SRC = $(wildcard *.c)
+SRC = $(wildcard *.cpp)
 
 OBJDIR = Builds
 # List Assembler source files here.
@@ -127,7 +127,7 @@ CFLAGS += $(CDEFS) $(CINCS)
 CFLAGS += -O$(OPT)
 CFLAGS += -funsigned-char -funsigned-bitfields -fpack-struct -fshort-enums
 CFLAGS += -Wall -Wstrict-prototypes
-CFLAGS += -Wa,-adhlns=$(addprefix $(OBJDIR)/,$(<:.c=.lst))
+CFLAGS += -Wa,-adhlns=$(addprefix $(OBJDIR)/,$(<:.cpp=.lst))
 CFLAGS += $(patsubst %,-I%,$(EXTRAINCDIRS))
 CFLAGS += $(CSTANDARD)
 CFLAGS += -gstabs
@@ -299,10 +299,10 @@ MSG_CLEANING = Cleaning project:
 
 
 # Define all object files.
-OBJ = $(addprefix $(OBJDIR)/,$(SRC:.c=.o)) $(addprefix $(OBJDIR)/,$(ASRC:.S=.o))
+OBJ = $(addprefix $(OBJDIR)/,$(SRC:.cpp=.o)) $(addprefix $(OBJDIR)/,$(ASRC:.S=.o))
 
 # Define all listing files.
-LST = $(addprefix $(OBJDIR)/,$(SRC:.c=.lst)) $(addprefix $(OBJDIR)/,$(ASRC:.S=.lst))
+LST = $(addprefix $(OBJDIR)/,$(SRC:.cpp=.lst)) $(addprefix $(OBJDIR)/,$(ASRC:.S=.lst))
 
 
 # Compiler flags to generate dependency files.
@@ -454,14 +454,14 @@ $(OBJDIR)/%.elf: $(OBJ)
 
 
 # Compile: create object files from C source files.
-$(OBJDIR)/%.o : %.c
+$(OBJDIR)/%.o : %.cpp
 	@echo
 	@echo $(MSG_COMPILING) $<
 	$(CC) -c $(ALL_CFLAGS) "$(abspath $<)" -o $@ 
 
 
 # Compile: create assembler files from C source files.
-$(OBJDIR)/%.s : %.c
+$(OBJDIR)/%.s : %.cpp
 	$(CC) -S $(ALL_CFLAGS) $< -o $@
 
 
@@ -472,7 +472,7 @@ $(OBJDIR)/%.o : %.S
 	$(CC) -c $(ALL_ASFLAGS) $< -o $@
 
 # Create preprocessed source for use in sending a bug report.
-$(OBJDIR)/%.i : %.c
+$(OBJDIR)/%.i : %.cpp
 	$(CC) -E -mmcu=$(MCU) -I. $(CFLAGS) $< -o $@ 
 
 
@@ -491,8 +491,8 @@ clean_list :
 	$(REMOVE) $(OBJDIR)/$(TARGET).lss
 	$(REMOVE) $(OBJ)
 	$(REMOVE) $(LST)
-	$(REMOVE) $(OBJDIR)/$(SRC:.c=.s)
-	$(REMOVE) $(OBJDIR)/$(SRC:.c=.d)
+	$(REMOVE) $(OBJDIR)/$(SRC:.cpp=.s)
+	$(REMOVE) $(OBJDIR)/$(SRC:.cpp=.d)
 	$(REMOVE) $(OBJDIR)/.dep/*
 
 

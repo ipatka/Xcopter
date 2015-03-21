@@ -3,29 +3,19 @@
 #include <avr/interrupt.h>
 #include <util/delay.h>
 
-#include "Peripheral.h"
+#include "Quadcopter.h"
+
 using namespace std;
 
-class test{
-public:
-    test();
-};
+
+int main (void){
 
 
-void initIO(void) {
     
-    test *t = new test();
+    //should init peripherals...without need to make a peripheral object
     
-  
+    //decide on DDRs, ports, and pins for each peripheral now
     
-
-
-}
-
-int main(void) {
-	initIO();
-
-	while (1) {
-	}
-	return 0; // never reached
+    
+    return 0;
 }

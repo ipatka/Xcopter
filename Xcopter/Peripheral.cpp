@@ -8,9 +8,11 @@
 
 #include "Peripheral.h"
 
-Peripheral::Peripheral(volatile uint8_t *data_direction_register, const unsigned char input_bit, const unsigned char output_bit){
+Peripheral::Peripheral(volatile uint8_t *data_direction_register, const unsigned char in_bit, const unsigned char out_bit){
     //constructor method
     DDR = data_direction_register;
+    input_bit = in_bit;
+    output_bit = out_bit;
 
 }
 
@@ -19,6 +21,6 @@ Peripheral::~Peripheral(){
 }
 
 
-void Peripheral::getIO(volatile uint8_t *data_direction_register, const unsigned char bit){
-    return DDR;
+volatile uint8_t Peripheral::getIO(void){
+    return *DDR;
 }

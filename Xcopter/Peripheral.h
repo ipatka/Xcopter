@@ -10,24 +10,24 @@
 #define __Xcopter__Peripheral__
 
 #include <stdio.h>
-//#include <avr/io.h>
-
+#include <avr/io.h>
 
 class Peripheral {
 
     
 private:
     volatile uint8_t *DDR;
-    const unsigned char input_bit;
-    const unsigned char output_bit;
+    unsigned char input_bit;
+    unsigned char output_bit;
 
 
 public:
-    Peripheral(volatile uint8_t *data_direction_register, const unsigned char input_bit, const unsigned char output_bit); //constructor
+    Peripheral(volatile uint8_t *data_direction_register, const unsigned char in_bit, const unsigned char out_bit); //constructor
     ~Peripheral(); //deconstructor
     
- 
-    void getIO(volatile uint8_t *data_direction_register, const unsigned char bit);
+    int initialize();
+    
+    volatile uint8_t getIO(void);
     
 };
 
