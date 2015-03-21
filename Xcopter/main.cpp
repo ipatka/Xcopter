@@ -10,7 +10,6 @@ using namespace std;
 
 
 int main (void){
-    
 
 
     Quadcopter *xcopter = new Quadcopter();
