@@ -17,6 +17,7 @@ class Binary {
     
     
 public:
+
     
     Binary(); //constructor
     ~Binary(); //deconstructor

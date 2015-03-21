@@ -9,28 +9,28 @@
 #include "Binary.h"
 
 
-void Binary::Binary(){
+Binary::Binary(){
     //constructor method
 }
 
-void Binary::~Binary(){
+Binary::~Binary(){
     //deconstructor method
 }
 
 void Binary::setBit(volatile uint8_t *byte, const unsigned char bit){
-    *Byte = *Byte | (1 << BitToSet);
+    *byte = *byte | (1 << bit);
 }
 
 void Binary::clearBit(volatile uint8_t *byte, const unsigned char bit){
-    *Byte &= ~(1 << BitToClear);
+    *byte &= ~(1 << bit);
 }
 
-void Binary::readBit(unsigned char byte, const unsigned char bit){
+unsigned char Binary::readBit(unsigned char byte, const unsigned char bit){
     unsigned char ValueOfBit;
-    ValueOfBit = (Byte & (1 << BitToRead)) >> BitToRead;
+    ValueOfBit = (byte & (1 << bit)) >> bit;
     return ValueOfBit;
 }
 
 void Binary::toggleBit(volatile uint8_t *byte, const unsigned char bit){
-    *Byte = (*Byte ^= (1 << BitToToggle));
+    *byte = (*byte ^= (1 << bit));
 }
