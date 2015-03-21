@@ -1,0 +1,54 @@
+   1               		.file	"main.c"
+   2               	__SP_H__ = 0x3e
+   3               	__SP_L__ = 0x3d
+   4               	__SREG__ = 0x3f
+   5               	__tmp_reg__ = 0
+   6               	__zero_reg__ = 1
+   8               		.text
+   9               	.Ltext0:
+ 112               	.global	initIO
+ 114               	initIO:
+   1:/Users/ipatka/Development/Quadcopter/Xcopter/Xcopter/main.c **** #include <stdio.h>
+   2:/Users/ipatka/Development/Quadcopter/Xcopter/Xcopter/main.c **** #include <avr/io.h>
+   3:/Users/ipatka/Development/Quadcopter/Xcopter/Xcopter/main.c **** #include <avr/interrupt.h>
+   4:/Users/ipatka/Development/Quadcopter/Xcopter/Xcopter/main.c **** #include <util/delay.h>
+   5:/Users/ipatka/Development/Quadcopter/Xcopter/Xcopter/main.c **** 
+   6:/Users/ipatka/Development/Quadcopter/Xcopter/Xcopter/main.c **** void initIO(void) {
+ 116               	.LM0:
+ 117               	.LFBB1:
+ 118               	/* prologue: function */
+ 119               	/* frame size = 0 */
+ 120               	/* stack size = 0 */
+ 121               	.L__stack_usage = 0
+ 122 0000 0895      		ret
+ 124               	.Lscope1:
+ 125               		.section	.text.startup,"ax",@progbits
+ 127               	.global	main
+ 129               	main:
+   7:/Users/ipatka/Development/Quadcopter/Xcopter/Xcopter/main.c **** 	
+   8:/Users/ipatka/Development/Quadcopter/Xcopter/Xcopter/main.c **** }
+   9:/Users/ipatka/Development/Quadcopter/Xcopter/Xcopter/main.c **** 
+  10:/Users/ipatka/Development/Quadcopter/Xcopter/Xcopter/main.c **** int main(void) {
+ 131               	.LM1:
+ 132               	.LFBB2:
+ 133               	/* prologue: function */
+ 134               	/* frame size = 0 */
+ 135               	/* stack size = 0 */
+ 136               	.L__stack_usage = 0
+ 137               	.L3:
+ 138 0000 00C0      		rjmp .L3
+ 140               	.Lscope2:
+ 141               		.text
+ 143               	.Letext0:
+ 144               		.ident	"GCC: (GNU) 4.8.3"
+DEFINED SYMBOLS
+                            *ABS*:0000000000000000 main.c
+/var/folders/h5/j0r8rv3d1q732cv4yb4jym280000gn/T//cc8yyvu3.s:2      *ABS*:000000000000003e __SP_H__
+/var/folders/h5/j0r8rv3d1q732cv4yb4jym280000gn/T//cc8yyvu3.s:3      *ABS*:000000000000003d __SP_L__
+/var/folders/h5/j0r8rv3d1q732cv4yb4jym280000gn/T//cc8yyvu3.s:4      *ABS*:000000000000003f __SREG__
+/var/folders/h5/j0r8rv3d1q732cv4yb4jym280000gn/T//cc8yyvu3.s:5      *ABS*:0000000000000000 __tmp_reg__
+/var/folders/h5/j0r8rv3d1q732cv4yb4jym280000gn/T//cc8yyvu3.s:6      *ABS*:0000000000000001 __zero_reg__
+/var/folders/h5/j0r8rv3d1q732cv4yb4jym280000gn/T//cc8yyvu3.s:114    .text:0000000000000000 initIO
+/var/folders/h5/j0r8rv3d1q732cv4yb4jym280000gn/T//cc8yyvu3.s:129    .text.startup:0000000000000000 main
+
+NO UNDEFINED SYMBOLS
