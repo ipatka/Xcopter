@@ -266,7 +266,7 @@ DEBUG_HOST = localhost
 
 # Define programs and commands.
 SHELL = sh
-CC = /usr/local/bin/avr-gcc
+CC = /usr/local/bin/avr-g++
 OBJCOPY = /usr/local/bin/avr-objcopy
 OBJDUMP = /usr/local/bin/avr-objdump
 SIZE = /usr/local/bin/avr-size
