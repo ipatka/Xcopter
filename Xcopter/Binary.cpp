@@ -25,9 +25,9 @@ void Binary::clearBit(volatile uint8_t *byte, const unsigned char bit){
     *byte &= ~(1 << bit);
 }
 
-unsigned char Binary::readBit(unsigned char byte, const unsigned char bit){
+unsigned char Binary::readBit(volatile uint8_t *byte, const unsigned char bit){
     unsigned char ValueOfBit;
-    ValueOfBit = (byte & (1 << bit)) >> bit;
+    ValueOfBit = (*byte & (1 << bit)) >> bit;
     return ValueOfBit;
 }
 

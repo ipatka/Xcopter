@@ -15,19 +15,24 @@
 typedef enum {INPUT, OUTPUT} io_type;
 
 class GPIOPin {
+    
+private:
     volatile uint8_t *data_direction_register;
     volatile uint8_t *port_reg;
     volatile uint8_t *pin_reg;
-    volatile uint8_t *bit_num; //the pin or port bit number you plan to read or write from
+    unsigned char bit_num; //the pin or port bit number you plan to read or write from
     io_type gpio_type;
+    
+    void Initialize();
 
+    
 public:
-    GPIOPin(volatile uint8_t *ddr, volatile uint8_t *reg, io_type t);
-    GPIOPin();
+    GPIOPin(volatile uint8_t *ddr, volatile uint8_t *reg, const unsigned char b, io_type t);
+    ~GPIOPin();
     
     void Write(const unsigned char *data);
-    const unsigned char Read(void);
-    
+    unsigned char Read(void);
+    void Toggle(void);
     
 };
 

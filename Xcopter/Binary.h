@@ -24,7 +24,7 @@ public:
     
     static void setBit(volatile uint8_t *byte, const unsigned char bit);
     static void clearBit(volatile uint8_t *byte, const unsigned char bit);
-    static unsigned char readBit(unsigned char byte, const unsigned char bit);
+    static unsigned char readBit(volatile uint8_t *byte, const unsigned char bit);
     static void toggleBit(volatile uint8_t *byte, const unsigned char bit);
     
 };
