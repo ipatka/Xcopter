@@ -37,6 +37,8 @@ private:
     void DutyCycleToSpeedController();
     
     
+    
+    
 public:
     MotorControl();//should this have information about IO?
     ~MotorControl();

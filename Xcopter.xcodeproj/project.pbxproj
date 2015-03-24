@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		923902DC1ABE0A0600918C83 /* CppHelper.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 923902DA1ABE0A0600918C83 /* CppHelper.cpp */; };
+		923902E21ABE210500918C83 /* GPIOPin.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 923902E01ABE210500918C83 /* GPIOPin.cpp */; };
 		9246B63F1ABD25520014641D /* Binary.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9246B63B1ABD25520014641D /* Binary.cpp */; };
 		9246B6401ABD25520014641D /* Peripheral.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9246B63D1ABD25520014641D /* Peripheral.cpp */; };
 		9246B6451ABD30370014641D /* Quadcopter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9246B6431ABD30370014641D /* Quadcopter.cpp */; };
@@ -20,6 +21,8 @@
 /* Begin PBXFileReference section */
 		923902DA1ABE0A0600918C83 /* CppHelper.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CppHelper.cpp; sourceTree = "<group>"; };
 		923902DB1ABE0A0600918C83 /* CppHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CppHelper.h; sourceTree = "<group>"; };
+		923902E01ABE210500918C83 /* GPIOPin.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GPIOPin.cpp; sourceTree = "<group>"; };
+		923902E11ABE210500918C83 /* GPIOPin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GPIOPin.h; sourceTree = "<group>"; };
 		9246B63B1ABD25520014641D /* Binary.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Binary.cpp; sourceTree = "<group>"; };
 		9246B63C1ABD25520014641D /* Binary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Binary.h; sourceTree = "<group>"; };
 		9246B63D1ABD25520014641D /* Peripheral.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Peripheral.cpp; sourceTree = "<group>"; };
@@ -81,6 +84,8 @@
 				C00FDA181ABE1FFD00877040 /* PIDControl.h */,
 				C00FDA101ABE1B2D00877040 /* PID */,
 				C00FDA0F1ABE1AF600877040 /* MPU9150 */,
+				923902E01ABE210500918C83 /* GPIOPin.cpp */,
+				923902E11ABE210500918C83 /* GPIOPin.h */,
 				C085E4661ABD05610072C424 /* main.cpp */,
 				923902DA1ABE0A0600918C83 /* CppHelper.cpp */,
 				923902DB1ABE0A0600918C83 /* CppHelper.h */,
@@ -232,6 +237,7 @@
 			files = (
 				9246B6451ABD30370014641D /* Quadcopter.cpp in Sources */,
 				C085E4671ABD05610072C424 /* main.cpp in Sources */,
+				923902E21ABE210500918C83 /* GPIOPin.cpp in Sources */,
 				923902DC1ABE0A0600918C83 /* CppHelper.cpp in Sources */,
 				C085E46A1ABD05610072C424 /* Makefile in Sources */,
 				925DA0FA1ABD4D8E0019B74B /* MotorControl.cpp in Sources */,
