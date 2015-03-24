@@ -21,6 +21,9 @@ Quadcopter::Quadcopter(){
     InitializeMotors();
     InitializePeripherals();
     //MotorControl motor_control = new MotorControl();
+    
+    PIDController *pids = new PIDController();
+    
 }
 
 Quadcopter::~Quadcopter(){

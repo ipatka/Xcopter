@@ -13,6 +13,7 @@
 #include "Binary.h"
 #include "Peripheral.h"
 #include "MotorControl.h"
+#include "PIDControl.h"
 
 #include <avr/io.h>
 

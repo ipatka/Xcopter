@@ -12,6 +12,7 @@
 		9246B6401ABD25520014641D /* Peripheral.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9246B63D1ABD25520014641D /* Peripheral.cpp */; };
 		9246B6451ABD30370014641D /* Quadcopter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9246B6431ABD30370014641D /* Quadcopter.cpp */; };
 		925DA0FA1ABD4D8E0019B74B /* MotorControl.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 925DA0F81ABD4D8E0019B74B /* MotorControl.cpp */; };
+		C00FDA191ABE1FFD00877040 /* PIDControl.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C00FDA171ABE1FFD00877040 /* PIDControl.cpp */; };
 		C085E4671ABD05610072C424 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C085E4661ABD05610072C424 /* main.cpp */; };
 		C085E46A1ABD05610072C424 /* Makefile in Sources */ = {isa = PBXBuildFile; fileRef = C085E4691ABD05610072C424 /* Makefile */; };
 /* End PBXBuildFile section */
@@ -27,12 +28,35 @@
 		9246B6441ABD30370014641D /* Quadcopter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Quadcopter.h; sourceTree = "<group>"; };
 		925DA0F81ABD4D8E0019B74B /* MotorControl.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MotorControl.cpp; sourceTree = "<group>"; };
 		925DA0F91ABD4D8E0019B74B /* MotorControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MotorControl.h; sourceTree = "<group>"; };
+		C00FDA111ABE1B6A00877040 /* main.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
+		C00FDA121ABE1B6A00877040 /* pid.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = pid.c; sourceTree = "<group>"; };
+		C00FDA131ABE1B6A00877040 /* pid.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = pid.h; sourceTree = "<group>"; };
+		C00FDA141ABE1B6A00877040 /* stdint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = stdint.h; sourceTree = "<group>"; };
+		C00FDA171ABE1FFD00877040 /* PIDControl.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PIDControl.cpp; sourceTree = "<group>"; };
+		C00FDA181ABE1FFD00877040 /* PIDControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PIDControl.h; sourceTree = "<group>"; };
 		C085E4631ABD05610072C424 /* Index */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Index; sourceTree = BUILT_PRODUCTS_DIR; };
 		C085E4661ABD05610072C424 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		C085E4691ABD05610072C424 /* Makefile */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.make; path = Makefile; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXGroup section */
+		C00FDA0F1ABE1AF600877040 /* MPU9150 */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = MPU9150;
+			sourceTree = "<group>";
+		};
+		C00FDA101ABE1B2D00877040 /* PID */ = {
+			isa = PBXGroup;
+			children = (
+				C00FDA111ABE1B6A00877040 /* main.c */,
+				C00FDA121ABE1B6A00877040 /* pid.c */,
+				C00FDA131ABE1B6A00877040 /* pid.h */,
+			);
+			name = PID;
+			sourceTree = "<group>";
+		};
 		C085E4581ABD05610072C424 = {
 			isa = PBXGroup;
 			children = (
@@ -52,6 +76,11 @@
 		C085E4651ABD05610072C424 /* Xcopter */ = {
 			isa = PBXGroup;
 			children = (
+				C00FDA141ABE1B6A00877040 /* stdint.h */,
+				C00FDA171ABE1FFD00877040 /* PIDControl.cpp */,
+				C00FDA181ABE1FFD00877040 /* PIDControl.h */,
+				C00FDA101ABE1B2D00877040 /* PID */,
+				C00FDA0F1ABE1AF600877040 /* MPU9150 */,
 				C085E4661ABD05610072C424 /* main.cpp */,
 				923902DA1ABE0A0600918C83 /* CppHelper.cpp */,
 				923902DB1ABE0A0600918C83 /* CppHelper.h */,
@@ -206,6 +235,7 @@
 				923902DC1ABE0A0600918C83 /* CppHelper.cpp in Sources */,
 				C085E46A1ABD05610072C424 /* Makefile in Sources */,
 				925DA0FA1ABD4D8E0019B74B /* MotorControl.cpp in Sources */,
+				C00FDA191ABE1FFD00877040 /* PIDControl.cpp in Sources */,
 				9246B63F1ABD25520014641D /* Binary.cpp in Sources */,
 				9246B6401ABD25520014641D /* Peripheral.cpp in Sources */,
 			);
