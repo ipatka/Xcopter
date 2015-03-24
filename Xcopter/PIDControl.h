@@ -48,6 +48,11 @@ typedef struct{
 #define FALSE           0
 #define TRUE            1
 
+// Coefficientes
+#define K_P     1.00
+#define K_I     0.00
+#define K_D     0.00
+
 class PIDController {
     
 private:

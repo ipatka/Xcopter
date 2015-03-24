@@ -11,6 +11,15 @@
 
 PIDController::PIDController() {
     
+    //Initialize all of the PID controllers
+    this->PidInit(SCALING_FACTOR * K_P, SCALING_FACTOR * K_I, SCALING_FACTOR * K_D, &pid_pitch_rate);
+    this->PidInit(SCALING_FACTOR * K_P, SCALING_FACTOR * K_I, SCALING_FACTOR * K_D, &pid_pitch_stab);
+    this->PidInit(SCALING_FACTOR * K_P, SCALING_FACTOR * K_I, SCALING_FACTOR * K_D, &pid_roll_rate);
+    this->PidInit(SCALING_FACTOR * K_P, SCALING_FACTOR * K_I, SCALING_FACTOR * K_D, &pid_roll_stab);
+    this->PidInit(SCALING_FACTOR * K_P, SCALING_FACTOR * K_I, SCALING_FACTOR * K_D, &pid_yaw_rate);
+    this->PidInit(SCALING_FACTOR * K_P, SCALING_FACTOR * K_I, SCALING_FACTOR * K_D, &pid_yaw_stab);
+    
+
 }
 
 void PIDController::PidResetIntegrator(PID *pid) {

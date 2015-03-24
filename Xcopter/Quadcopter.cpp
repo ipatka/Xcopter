@@ -22,6 +22,7 @@ Quadcopter::Quadcopter(){
     InitializePeripherals();
     //MotorControl motor_control = new MotorControl();
     
+    //Initializing the PIDs
     PIDController *pids = new PIDController();
     
 }
@@ -41,7 +42,11 @@ void Quadcopter::Fly(){
         
         //check for an instruction from rf peripheral
         
-        //check current orientation from gyro peripheral
+        //check current orientation from MPU
+        
+        //Send a struct with the orientation to a PID method. PID method then runs PidController for each one and returns the throttle values in a struct to be sent to motors
+        
+        //run PID calculation to get desired throttle for each motor - does this go here or within motor control?
         
         //set motor control object with current and desired orientation
         
