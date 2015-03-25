@@ -40,7 +40,7 @@ void GPIOPin::Initialize(){
 
 //GPIOPin public methods
 
-void GPIOPin::Write(const unsigned char *data){
+void GPIOPin::Write(const unsigned char data){
     if (this->gpio_type == OUTPUT)
         Binary::setBit(this->port_reg, this->bit_num);
 }
