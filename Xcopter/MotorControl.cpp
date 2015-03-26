@@ -16,6 +16,17 @@ MotorControl::MotorControl(){
 }
 
 MotorControl::~MotorControl(){
-    
 }
 
+
+
+
+
+//low level motor control
+void MotorControl::TurnMotorOn(GPIOPin *m){
+    m->Write(1);
+}
+
+void MotorControl::TurnMotorOff(GPIOPin *m){
+    m->Write(0);
+}

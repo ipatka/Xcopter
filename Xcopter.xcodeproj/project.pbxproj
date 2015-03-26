@@ -24,6 +24,7 @@
 		923902DB1ABE0A0600918C83 /* CppHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CppHelper.h; sourceTree = "<group>"; };
 		923902E01ABE210500918C83 /* GPIOPin.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GPIOPin.cpp; sourceTree = "<group>"; };
 		923902E11ABE210500918C83 /* GPIOPin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GPIOPin.h; sourceTree = "<group>"; };
+		923902E31ABE2F3200918C83 /* IO.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IO.h; sourceTree = "<group>"; };
 		9246B63B1ABD25520014641D /* Binary.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Binary.cpp; sourceTree = "<group>"; };
 		9246B63C1ABD25520014641D /* Binary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Binary.h; sourceTree = "<group>"; };
 		9246B63D1ABD25520014641D /* Peripheral.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Peripheral.cpp; sourceTree = "<group>"; };
@@ -93,6 +94,7 @@
 				923902DA1ABE0A0600918C83 /* CppHelper.cpp */,
 				923902DB1ABE0A0600918C83 /* CppHelper.h */,
 				9246B6431ABD30370014641D /* Quadcopter.cpp */,
+				923902E31ABE2F3200918C83 /* IO.h */,
 				9246B6441ABD30370014641D /* Quadcopter.h */,
 				925DA0F81ABD4D8E0019B74B /* MotorControl.cpp */,
 				925DA0F91ABD4D8E0019B74B /* MotorControl.h */,

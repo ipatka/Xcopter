@@ -12,7 +12,8 @@
 #define __Xcopter__MotorControl__
 
 #include <stdio.h>
-
+#include "IO.h"
+#include "GPIOPin.h"
 
 /*
  INPUTS:
@@ -41,8 +42,11 @@ private:
     void DutyCycleToSpeedController();
     throttle set_throttle;
     
-    
-    
+    GPIOPin *motor_1;
+    GPIOPin *motor_2;
+    GPIOPin *motor_3;
+    GPIOPin *motor_4;
+
     
 public:
     MotorControl();//should this have information about IO?

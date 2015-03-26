@@ -30,7 +30,7 @@ public:
     GPIOPin(volatile uint8_t *ddr, volatile uint8_t *reg, const unsigned char b, io_type t);
     ~GPIOPin();
     
-    void Write(const unsigned char *data);
+    void Write(const unsigned char data);
     unsigned char Read(void);
     void Toggle(void);
     
