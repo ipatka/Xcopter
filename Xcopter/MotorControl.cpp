@@ -7,10 +7,12 @@
 //
 
 #include "MotorControl.h"
+#include "PIDControl.h"
 
 
 MotorControl::MotorControl(){
-    
+    //Initialize the PIDs
+    new PIDController();
 }
 
 MotorControl::~MotorControl(){

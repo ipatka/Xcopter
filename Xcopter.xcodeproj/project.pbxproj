@@ -16,6 +16,7 @@
 		C00FDA191ABE1FFD00877040 /* PIDControl.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C00FDA171ABE1FFD00877040 /* PIDControl.cpp */; };
 		C085E4671ABD05610072C424 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C085E4661ABD05610072C424 /* main.cpp */; };
 		C085E46A1ABD05610072C424 /* Makefile in Sources */ = {isa = PBXBuildFile; fileRef = C085E4691ABD05610072C424 /* Makefile */; };
+		C0A91D841AC4985700B419FA /* MotionSensors.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C0A91D821AC4985700B419FA /* MotionSensors.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +41,8 @@
 		C085E4631ABD05610072C424 /* Index */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Index; sourceTree = BUILT_PRODUCTS_DIR; };
 		C085E4661ABD05610072C424 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		C085E4691ABD05610072C424 /* Makefile */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.make; path = Makefile; sourceTree = "<group>"; };
+		C0A91D821AC4985700B419FA /* MotionSensors.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MotionSensors.cpp; sourceTree = "<group>"; };
+		C0A91D831AC4985700B419FA /* MotionSensors.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MotionSensors.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXGroup section */
@@ -96,6 +99,8 @@
 				9246B63B1ABD25520014641D /* Binary.cpp */,
 				9246B63C1ABD25520014641D /* Binary.h */,
 				9246B63D1ABD25520014641D /* Peripheral.cpp */,
+				C0A91D821AC4985700B419FA /* MotionSensors.cpp */,
+				C0A91D831AC4985700B419FA /* MotionSensors.h */,
 				9246B63E1ABD25520014641D /* Peripheral.h */,
 				C085E4681ABD05610072C424 /* Makefiles */,
 			);
@@ -242,6 +247,7 @@
 				C085E46A1ABD05610072C424 /* Makefile in Sources */,
 				925DA0FA1ABD4D8E0019B74B /* MotorControl.cpp in Sources */,
 				C00FDA191ABE1FFD00877040 /* PIDControl.cpp in Sources */,
+				C0A91D841AC4985700B419FA /* MotionSensors.cpp in Sources */,
 				9246B63F1ABD25520014641D /* Binary.cpp in Sources */,
 				9246B6401ABD25520014641D /* Peripheral.cpp in Sources */,
 			);

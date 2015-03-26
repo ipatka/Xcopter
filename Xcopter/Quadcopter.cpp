@@ -18,12 +18,14 @@
 Quadcopter::Quadcopter(){
     //constructor initializes all IO and peripherals
     
+
+    new MotorControl();
+    MotionSensor motion_sensor;
     InitializeMotors();
     InitializePeripherals();
-    //MotorControl motor_control = new MotorControl();
+    InitializeSensors(MPU9150, motion_sensor);
     
-    //Initializing the PIDs
-    PIDController *pids = new PIDController();
+
     
 }
 
@@ -80,6 +82,18 @@ void Quadcopter::InitializePeripherals(){
     //gyro
     SetPinAsInput(DATA_DIR_REG_D, GYRO_READ_1);
     SetPinAsOutput(DATA_DIR_REG_D, GYRO_WRITE_1);
+    
+}
+
+SensorData Quadcopter::InitializeSensors(char type, MotionSensor motion_sensor) {
+    SensorData sensor_data;
+    if (type == MPU9150) {
+        sensor_data = motion_sensor.GetSensorReadings(sensor_data);
+        return sensor_data;
+        
+    } else {
+        return sensor_data;
+    }
     
 }
 

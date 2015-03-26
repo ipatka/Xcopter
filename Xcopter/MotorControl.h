@@ -27,6 +27,10 @@ typedef struct{
     char roll, pitch, yaw;
 }Orientation;
 
+typedef struct{
+    int front_left, front_right, back_left, back_right;
+}throttle;
+
 
 
 class MotorControl {
@@ -35,6 +39,7 @@ private:
     //might not return void later
     void RunPID();
     void DutyCycleToSpeedController();
+    throttle set_throttle;
     
     
     

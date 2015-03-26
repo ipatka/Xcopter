@@ -11,13 +11,10 @@
 
 PIDController::PIDController() {
     
-    //Initialize all of the PID controllers
-    this->PidInit(SCALING_FACTOR * K_P, SCALING_FACTOR * K_I, SCALING_FACTOR * K_D, &pid_pitch_rate);
-    this->PidInit(SCALING_FACTOR * K_P, SCALING_FACTOR * K_I, SCALING_FACTOR * K_D, &pid_pitch_stab);
-    this->PidInit(SCALING_FACTOR * K_P, SCALING_FACTOR * K_I, SCALING_FACTOR * K_D, &pid_roll_rate);
-    this->PidInit(SCALING_FACTOR * K_P, SCALING_FACTOR * K_I, SCALING_FACTOR * K_D, &pid_roll_stab);
-    this->PidInit(SCALING_FACTOR * K_P, SCALING_FACTOR * K_I, SCALING_FACTOR * K_D, &pid_yaw_rate);
-    this->PidInit(SCALING_FACTOR * K_P, SCALING_FACTOR * K_I, SCALING_FACTOR * K_D, &pid_yaw_stab);
+
+    
+    this->QuadPidInit(quad_pid_coefficients, pid_array);
+    
     
 
 }
@@ -37,6 +34,15 @@ void PIDController::PidInit(int16_t p_factor, int16_t i_factor, int16_t d_factor
     // Limits to avoid overflow
     pid->maxError = MAX_INT / (pid->P_Factor + 1);
     pid->maxSumError = MAX_I_TERM / (pid->I_Factor + 1);
+}
+
+void PIDController::QuadPidInit(double (&quad_pid_coefficients)[6][3], PID (&pid_array)[6]) {
+    
+    for (int i = 0; i < 6; i++) {
+        this->PidInit(quad_pid_coefficients[i][0], quad_pid_coefficients[i][1], quad_pid_coefficients[i][2], &pid_array[i]);
+    }
+    
+    
 }
 
 int16_t PIDController::PidController(int16_t setPoint, int16_t processValue, PID *pid_st)
@@ -86,4 +92,8 @@ int16_t PIDController::PidController(int16_t setPoint, int16_t processValue, PID
     }
     
     return((int16_t)ret);
+}
+
+PID_OUTPUT PIDController::QuadPidController(PID (&pid_array)[6]) {
+    
 }

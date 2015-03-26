@@ -13,7 +13,8 @@
 #include "Binary.h"
 #include "Peripheral.h"
 #include "MotorControl.h"
-#include "PIDControl.h"
+#include "MotionSensors.h"
+
 
 #include <avr/io.h>
 
@@ -49,6 +50,7 @@ private:
     /*Private Instance Variables*/
     Orientation orientation;
     MotorControl motor_control;
+    SensorData sensor_data;
     
     
     /*Private Methods*/
@@ -59,6 +61,7 @@ private:
     
     void InitializeMotors(void);
     void InitializePeripherals(void);
+    SensorData InitializeSensors(char type, MotionSensor motion_sensor);
     
 
     

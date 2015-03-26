@@ -31,6 +31,10 @@ typedef struct{
     int32_t maxSumError;
 }PID;
 
+typedef struct{
+    int pitch_output, roll_output, yaw_output;
+}PID_OUTPUT;
+
 /*! \brief Maximum values
  *
  * Needed to avoid sign/overflow problems
@@ -43,21 +47,47 @@ typedef struct{
 #define SCALING_FACTOR  128
 
 
-
-// Boolean values
-#define FALSE           0
-#define TRUE            1
+//PIDs
+#define PID_PITCH_RATE 0
+#define PID_PITCH_STAB 1
+#define PID_ROLL_RATE 3
+#define PID_ROLL_STAB 4
+#define PID_YAW_RATE 5
+#define PID_YAW_STAB 6
 
 // Coefficientes
-#define K_P     1.00
-#define K_I     0.00
-#define K_D     0.00
+#define K_P_PITCH_RATE     1.00
+#define K_I_PITCH_RATE     0.00
+#define K_D_PITCH_RATE     0.00
+
+#define K_P_PITCH_STAB     1.00
+#define K_I_PITCH_STAB     0.00
+#define K_D_PITCH_STAB     0.00
+
+#define K_P_ROLL_RATE     1.00
+#define K_I_ROLL_RATE     0.00
+#define K_D_ROLL_RATE     0.00
+
+#define K_P_ROLL_STAB     1.00
+#define K_I_ROLL_STAB     0.00
+#define K_D_ROLL_STAB     0.00
+
+#define K_P_YAW_RATE     1.00
+#define K_I_YAW_RATE     0.00
+#define K_D_YAW_RATE     0.00
+
+#define K_P_YAW_STAB     1.00
+#define K_I_YAW_STAB     0.00
+#define K_D_YAW_STAB     0.00
+
 
 class PIDController {
     
 private:
     
     /*Private Instance Variables*/
+    
+    //PID controllers
     PID pid_pitch_rate;
     PID pid_pitch_stab;
     PID pid_roll_rate;
@@ -65,22 +95,57 @@ private:
     PID pid_yaw_rate;
     PID pid_yaw_stab;
     
+    //Coefficients
+    double quad_pid_coefficients[6][3] = {
+        {   K_P_PITCH_RATE * SCALING_FACTOR,
+            K_I_PITCH_RATE * SCALING_FACTOR,
+            K_D_PITCH_RATE * SCALING_FACTOR
+        },
+        {   K_P_PITCH_STAB * SCALING_FACTOR,
+            K_I_PITCH_STAB * SCALING_FACTOR,
+            K_D_PITCH_STAB * SCALING_FACTOR
+        },
+        {   K_P_ROLL_RATE * SCALING_FACTOR,
+            K_I_ROLL_RATE * SCALING_FACTOR,
+            K_D_ROLL_RATE * SCALING_FACTOR
+        },
+        {   K_P_ROLL_STAB * SCALING_FACTOR,
+            K_I_ROLL_STAB * SCALING_FACTOR,
+            K_D_ROLL_STAB * SCALING_FACTOR
+        },
+        {   K_P_YAW_RATE * SCALING_FACTOR,
+            K_I_YAW_RATE * SCALING_FACTOR,
+            K_D_YAW_RATE * SCALING_FACTOR
+        },
+        {   K_P_YAW_STAB * SCALING_FACTOR,
+            K_I_YAW_STAB * SCALING_FACTOR,
+            K_D_YAW_STAB * SCALING_FACTOR
+        }
+    };
     
+    PID pid_array[6] = {
+        pid_pitch_rate,
+        pid_pitch_stab,
+        pid_roll_rate,
+        pid_roll_stab,
+        pid_yaw_rate,
+        pid_yaw_stab
+    };
     
     
     /*Private Methods*/
     
     void PidResetIntegrator(PID *pid);
-
+    void QuadPidInit(double (&quad_pid_coefficients)[6][3], PID (&pid_array)[6]);
+    void PidInit(int16_t p_factor, int16_t i_factor, int16_t d_factor, PID *pid);
+    int16_t PidController(int16_t setPoint, int16_t processValue, PID *pid);
     
     
 public:
     
     PIDController();
+    PID_OUTPUT QuadPidController(PID (&pid_array)[6]);
     
-    void PidInit(int16_t p_factor, int16_t i_factor, int16_t d_factor, PID *pid);
-    
-    int16_t PidController(int16_t setPoint, int16_t processValue, PID *pid);
 
     
     
