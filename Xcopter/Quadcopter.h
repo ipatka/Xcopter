@@ -28,6 +28,7 @@ private:
     Orientation orientation;
     MotorControl motor_control;
     SensorData sensor_data;
+    MotionSensor motion_sensor;
     
     
     /*Private Methods*/
@@ -38,7 +39,7 @@ private:
     
     void InitializeMotors(void);
     void InitializePeripherals(void);
-    SensorData InitializeSensors(char type, MotionSensor motion_sensor);
+
     
 
     

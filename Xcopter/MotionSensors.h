@@ -16,7 +16,7 @@
 
 
 typedef struct{
-    int roll, pitch, yaw, rotational_rate;
+    int roll_stab, roll_rate, pitch_stab, pitch_rate, yaw_stab, yaw_rate;
 }SensorData;
 
 class MotionSensor {
@@ -32,7 +32,7 @@ public:
     
     /*Public Methods*/
     MotionSensor();
-    SensorData GetSensorReadings(SensorData sensor_readings);
+    void GetSensorReadings(SensorData *sensor_readings);
     
 };
 

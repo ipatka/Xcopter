@@ -18,12 +18,12 @@
 Quadcopter::Quadcopter(){
     //constructor initializes all IO and peripherals
     
-
+    // Do these need to be here? Or does the constructor get called since we declare them in the quadcopter class?
     new MotorControl();
-    MotionSensor motion_sensor;
+    new MotionSensor();
+    
     InitializeMotors();
     InitializePeripherals();
-    InitializeSensors(MPU9150, motion_sensor);
     
 
     
@@ -47,7 +47,8 @@ void Quadcopter::Fly(){
         //check current orientation from MPU
         
         //Send a struct with the orientation to a PID method. PID method then runs PidController for each one and returns the throttle values in a struct to be sent to motors
-        
+        motion_sensor.GetSensorReadings(&sensor_data);
+        orientation = this->GetOrientation();
         //run PID calculation to get desired throttle for each motor - does this go here or within motor control?
         
         //set motor control object with current and desired orientation
@@ -85,17 +86,7 @@ void Quadcopter::InitializePeripherals(){
     
 }
 
-SensorData Quadcopter::InitializeSensors(char type, MotionSensor motion_sensor) {
-    SensorData sensor_data;
-    if (type == MPU9150) {
-        sensor_data = motion_sensor.GetSensorReadings(sensor_data);
-        return sensor_data;
-        
-    } else {
-        return sensor_data;
-    }
-    
-}
+
 
 void Quadcopter::SetPinAsInput(volatile uint8_t *DDR, const unsigned char pin_number){
     Binary::clearBit(DDR, pin_number);

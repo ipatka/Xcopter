@@ -94,6 +94,15 @@ int16_t PIDController::PidController(int16_t setPoint, int16_t processValue, PID
     return((int16_t)ret);
 }
 
-PID_OUTPUT PIDController::QuadPidController(PID (&pid_array)[6]) {
+void PIDController::QuadPidController(PID_REFERENCES *reference_values, SensorData *measurement_value, PID_OUTPUT *pid_output) {
+    
+    int16_t pitch_stab_output = this->PidController(reference_values->pitch, measurement_value->pitch_stab, &pid_array[PID_PITCH_STAB]);
+    int16_t roll_stab_output = this->PidController(reference_values->roll, measurement_value->roll_stab, &pid_array[PID_ROLL_STAB]);
+    int16_t yaw_stab_output = this->PidController(reference_values->yaw, measurement_value->yaw_stab, &pid_array[PID_YAW_STAB]);
+    
+    
+    pid_output->pitch_output = this->PidController(pitch_stab_output, measurement_value->pitch_rate, &pid_array[PID_PITCH_RATE]);
+    pid_output->roll_output = this->PidController(roll_stab_output, measurement_value->roll_rate, &pid_array[PID_ROLL_RATE]);
+    pid_output->yaw_output = this->PidController(yaw_stab_output, measurement_value->yaw_rate, &pid_array[PID_YAW_RATE]);
     
 }

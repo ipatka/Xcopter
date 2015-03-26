@@ -11,6 +11,7 @@
 
 
 #include "stdint.h"
+#include "MotionSensors.h"
 
 
 
@@ -34,6 +35,10 @@ typedef struct{
 typedef struct{
     int pitch_output, roll_output, yaw_output;
 }PID_OUTPUT;
+
+typedef struct{
+    int roll, pitch, yaw;
+}PID_REFERENCES;
 
 /*! \brief Maximum values
  *
@@ -144,7 +149,7 @@ private:
 public:
     
     PIDController();
-    PID_OUTPUT QuadPidController(PID (&pid_array)[6]);
+    void QuadPidController(PID_REFERENCES *reference_values, SensorData *measurement_value, PID_OUTPUT *pid_output);
     
 
     

@@ -14,6 +14,8 @@
 #include <stdio.h>
 #include "IO.h"
 #include "GPIOPin.h"
+#include "MotionSensors.h"
+#include "PIDControl.h"
 
 /*
  INPUTS:
@@ -30,7 +32,7 @@ typedef struct{
 
 typedef struct{
     int front_left, front_right, back_left, back_right;
-}throttle;
+}Throttle;
 
 
 
@@ -40,12 +42,22 @@ private:
     //might not return void later
     void RunPID();
     void DutyCycleToSpeedController();
-    throttle set_throttle;
+    void TurnMotorOn(GPIOPin *m);
+    void TurnMotorOff(GPIOPin *m);
     
     GPIOPin *motor_1;
     GPIOPin *motor_2;
     GPIOPin *motor_3;
     GPIOPin *motor_4;
+    
+    PID_OUTPUT pid_output;
+    PID_REFERENCES reference_values;
+    
+    Throttle throttle;
+    
+    PIDController pid_controller;
+    
+    
 
     
 public:
@@ -54,7 +66,7 @@ public:
     
     //ControlMotors method runs the PID loop and adjusts the output pwm signals
     void ControlMotors();
-    void SetOrientation(Orientation *o);
+    void SetOrientation(Orientation *orientation, SensorData *sensor_data);
     
 };
 

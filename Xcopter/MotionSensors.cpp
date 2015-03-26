@@ -13,12 +13,14 @@ MotionSensor::MotionSensor() {
 
 }
 
-SensorData MotionSensor::GetSensorReadings(SensorData sensor_readings) {
+void MotionSensor::GetSensorReadings(SensorData *sensor_readings) {
     
-    sensor_readings.pitch = 0;
-    sensor_readings.roll = 0;
-    sensor_readings.yaw = 0;
-    sensor_readings.rotational_rate = 0;
+    sensor_readings->pitch_stab = 0;
+    sensor_readings->pitch_rate = 0;
+    sensor_readings->roll_stab = 0;
+    sensor_readings->roll_rate = 0;
+    sensor_readings->yaw_stab = 0;
+    sensor_readings->yaw_rate = 0;
     
-    return sensor_readings;
+    //return sensor_readings;
 }
