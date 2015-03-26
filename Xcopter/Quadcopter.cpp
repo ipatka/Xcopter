@@ -49,7 +49,8 @@ void Quadcopter::Fly(){
         //Send a struct with the orientation to a PID method. PID method then runs PidController for each one and returns the throttle values in a struct to be sent to motors
         motion_sensor.GetSensorReadings(&sensor_data);
         orientation = this->GetOrientation();
-        //run PID calculation to get desired throttle for each motor - does this go here or within motor control?
+        motor_control.SetOrientation(&orientation, &sensor_data);
+
         
         //set motor control object with current and desired orientation
         
