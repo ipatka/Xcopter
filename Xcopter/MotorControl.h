@@ -55,7 +55,7 @@ private:
     
     Throttle throttle;
     
-    PIDController pid_controller;
+    PIDController *pid_controller;
     
     
 

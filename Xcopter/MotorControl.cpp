@@ -19,7 +19,7 @@ MotorControl::MotorControl(){
     this->motor_4 = new GPIOPin(MOTOR_DDR, MOTOR_PORT, MOTOR_WRITE_4, OUTPUT);
     
     //Initialize the PIDs
-    new PIDController();
+    this->pid_controller = new PIDController();
 }
 
 MotorControl::~MotorControl(){
@@ -30,12 +30,14 @@ void MotorControl::ControlMotors() {
     
 }
 
+
+
 void MotorControl::SetOrientation(Orientation *orientation, SensorData *sensor_data) {
     reference_values.roll = orientation->roll;
     reference_values.yaw = orientation->yaw;
     reference_values.pitch = orientation->pitch;
     
-    pid_controller.QuadPidController(&reference_values, sensor_data, &pid_output);
+    this->pid_controller->QuadPidController(&reference_values, sensor_data, &pid_output);
     
     throttle.front_left = orientation->throttle - pid_output.roll_output - pid_output.pitch_output - pid_output.yaw_output;
     
@@ -45,9 +47,9 @@ void MotorControl::SetOrientation(Orientation *orientation, SensorData *sensor_d
     
     throttle.back_right = orientation->throttle + pid_output.roll_output + pid_output.pitch_output - pid_output.yaw_output;
     
-   
-    
 }
+
+
 
 //low level motor control
 void MotorControl::TurnMotorOn(GPIOPin *m){

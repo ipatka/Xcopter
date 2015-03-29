@@ -26,25 +26,19 @@ private:
     
     /*Private Instance Variables*/
     Orientation orientation;
-    MotorControl motor_control;
+    MotorControl *motor_control;
     SensorData sensor_data;
-    MotionSensor motion_sensor;
+    MotionSensor *motion_sensor;
     
     
     /*Private Methods*/
     
     void EmergencyLand();
     void SetOrientation(Orientation *o);
-    Orientation GetOrientation();
-    
-    void InitializeMotors(void);
-    void InitializePeripherals(void);
-
     
 
     
-    void SetPinAsOutput(volatile uint8_t *DDR, const unsigned char pin_number);
-    void SetPinAsInput(volatile uint8_t *DDR, const unsigned char pin_number);
+
     
 
 public:
