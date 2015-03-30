@@ -10,9 +10,11 @@
 #define __Xcopter__MotionSensors__
 
 #include <stdio.h>
+#include "MPU9150.h"
+#include "Quaternion.h"
 
 
-#define MPU9150 0
+
 
 
 typedef struct{
@@ -24,6 +26,9 @@ class MotionSensor {
 private:
     
     /*Private Instance Variables*/
+    MPU9150 imu;
+    Quaternion q1;
+    char buffer[200];
 
     /*Private Methods*/
     

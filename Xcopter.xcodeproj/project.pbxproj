@@ -16,6 +16,7 @@
 		C00FDA191ABE1FFD00877040 /* PIDControl.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C00FDA171ABE1FFD00877040 /* PIDControl.cpp */; };
 		C085E4671ABD05610072C424 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C085E4661ABD05610072C424 /* main.cpp */; };
 		C085E46A1ABD05610072C424 /* Makefile in Sources */ = {isa = PBXBuildFile; fileRef = C085E4691ABD05610072C424 /* Makefile */; };
+		C091F7761AC891360066D4A7 /* avr_i2c.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C091F7741AC891360066D4A7 /* avr_i2c.cpp */; };
 		C0A91D841AC4985700B419FA /* MotionSensors.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C0A91D821AC4985700B419FA /* MotionSensors.cpp */; };
 /* End PBXBuildFile section */
 
@@ -42,6 +43,17 @@
 		C085E4631ABD05610072C424 /* Index */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Index; sourceTree = BUILT_PRODUCTS_DIR; };
 		C085E4661ABD05610072C424 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		C085E4691ABD05610072C424 /* Makefile */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.make; path = Makefile; sourceTree = "<group>"; };
+		C091F76C1AC8892D0066D4A7 /* dmpdata.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = dmpdata.h; sourceTree = "<group>"; };
+		C091F76D1AC8892D0066D4A7 /* MPU9150.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MPU9150.cpp; sourceTree = "<group>"; };
+		C091F76E1AC8892D0066D4A7 /* MPU9150.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPU9150.h; sourceTree = "<group>"; };
+		C091F76F1AC8892D0066D4A7 /* registers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = registers.h; sourceTree = "<group>"; };
+		C091F7701AC889820066D4A7 /* Quaternion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Quaternion.h; sourceTree = "<group>"; };
+		C091F7711AC889820066D4A7 /* Vector3.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Vector3.h; sourceTree = "<group>"; };
+		C091F7721AC890F90066D4A7 /* TWI_master.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = TWI_master.c; sourceTree = "<group>"; };
+		C091F7731AC890F90066D4A7 /* TWI_master.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TWI_master.h; sourceTree = "<group>"; };
+		C091F7741AC891360066D4A7 /* avr_i2c.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = avr_i2c.cpp; sourceTree = "<group>"; };
+		C091F7751AC891360066D4A7 /* avr_i2c.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = avr_i2c.h; sourceTree = "<group>"; };
+		C091F7771AC897B60066D4A7 /* pinNames.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = pinNames.h; sourceTree = "<group>"; };
 		C0A91D821AC4985700B419FA /* MotionSensors.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MotionSensors.cpp; sourceTree = "<group>"; };
 		C0A91D831AC4985700B419FA /* MotionSensors.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MotionSensors.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -93,8 +105,8 @@
 				C085E4661ABD05610072C424 /* main.cpp */,
 				923902DA1ABE0A0600918C83 /* CppHelper.cpp */,
 				923902DB1ABE0A0600918C83 /* CppHelper.h */,
-				9246B6431ABD30370014641D /* Quadcopter.cpp */,
 				923902E31ABE2F3200918C83 /* IO.h */,
+				9246B6431ABD30370014641D /* Quadcopter.cpp */,
 				9246B6441ABD30370014641D /* Quadcopter.h */,
 				925DA0F81ABD4D8E0019B74B /* MotorControl.cpp */,
 				925DA0F91ABD4D8E0019B74B /* MotorControl.h */,
@@ -103,6 +115,17 @@
 				9246B63D1ABD25520014641D /* Peripheral.cpp */,
 				C0A91D821AC4985700B419FA /* MotionSensors.cpp */,
 				C0A91D831AC4985700B419FA /* MotionSensors.h */,
+				C091F76C1AC8892D0066D4A7 /* dmpdata.h */,
+				C091F76D1AC8892D0066D4A7 /* MPU9150.cpp */,
+				C091F76E1AC8892D0066D4A7 /* MPU9150.h */,
+				C091F7771AC897B60066D4A7 /* pinNames.h */,
+				C091F7741AC891360066D4A7 /* avr_i2c.cpp */,
+				C091F7751AC891360066D4A7 /* avr_i2c.h */,
+				C091F7721AC890F90066D4A7 /* TWI_master.c */,
+				C091F7731AC890F90066D4A7 /* TWI_master.h */,
+				C091F7701AC889820066D4A7 /* Quaternion.h */,
+				C091F7711AC889820066D4A7 /* Vector3.h */,
+				C091F76F1AC8892D0066D4A7 /* registers.h */,
 				9246B63E1ABD25520014641D /* Peripheral.h */,
 				C085E4681ABD05610072C424 /* Makefiles */,
 			);
@@ -250,6 +273,7 @@
 				925DA0FA1ABD4D8E0019B74B /* MotorControl.cpp in Sources */,
 				C00FDA191ABE1FFD00877040 /* PIDControl.cpp in Sources */,
 				C0A91D841AC4985700B419FA /* MotionSensors.cpp in Sources */,
+				C091F7761AC891360066D4A7 /* avr_i2c.cpp in Sources */,
 				9246B63F1ABD25520014641D /* Binary.cpp in Sources */,
 				9246B6401ABD25520014641D /* Peripheral.cpp in Sources */,
 			);
