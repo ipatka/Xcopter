@@ -112,7 +112,6 @@
 				925DA0F91ABD4D8E0019B74B /* MotorControl.h */,
 				9246B63B1ABD25520014641D /* Binary.cpp */,
 				9246B63C1ABD25520014641D /* Binary.h */,
-				9246B63D1ABD25520014641D /* Peripheral.cpp */,
 				C0A91D821AC4985700B419FA /* MotionSensors.cpp */,
 				C0A91D831AC4985700B419FA /* MotionSensors.h */,
 				C091F76C1AC8892D0066D4A7 /* dmpdata.h */,

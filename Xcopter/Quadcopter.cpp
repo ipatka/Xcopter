@@ -19,18 +19,14 @@ Quadcopter::Quadcopter(){
     //constructor initializes all IO and peripherals
     
     // Do these need to be here? Or does the constructor get called since we declare them in the quadcopter class?
-    new MotorControl();
-    new MotionSensor();
-    
-    InitializeMotors();
-    InitializePeripherals();
-    
-
+    this->motor_control = new MotorControl();
+    this->motion_sensor = new MotionSensor();
     
 }
 
+
 Quadcopter::~Quadcopter(){
-    
+    //deconstructor
 }
 
 void Quadcopter::Fly(){
@@ -47,9 +43,8 @@ void Quadcopter::Fly(){
         //check current orientation from MPU
         
         //Send a struct with the orientation to a PID method. PID method then runs PidController for each one and returns the throttle values in a struct to be sent to motors
-        motion_sensor.GetSensorReadings(&sensor_data);
-        orientation = this->GetOrientation();
-        motor_control.SetOrientation(&orientation, &sensor_data);
+        this->motion_sensor->GetSensorReadings(&sensor_data);
+        this->motor_control->SetOrientation(&this->orientation, &sensor_data);
 
         
         //set motor control object with current and desired orientation
@@ -61,38 +56,3 @@ void Quadcopter::Fly(){
     
 }
 
-void Quadcopter::SetOrientation(Orientation *o){
-    orientation.throttle = o->throttle;
-    orientation.roll = o->roll;
-    orientation.pitch = o->pitch;
-    orientation.yaw = o->yaw;
-}
-
-Orientation Quadcopter::GetOrientation(){
-    return orientation;
-}
-
-void Quadcopter::InitializeMotors(){
-    //set up output pins for each motor's enable signal
-    SetPinAsOutput(DATA_DIR_REG_B, MOTOR_WRITE_1);
-    SetPinAsOutput(DATA_DIR_REG_B, MOTOR_WRITE_2);
-    SetPinAsOutput(DATA_DIR_REG_B, MOTOR_WRITE_3);
-    SetPinAsOutput(DATA_DIR_REG_B, MOTOR_WRITE_4);
-}
-
-void Quadcopter::InitializePeripherals(){
-    //gyro
-    SetPinAsInput(DATA_DIR_REG_D, GYRO_READ_1);
-    SetPinAsOutput(DATA_DIR_REG_D, GYRO_WRITE_1);
-    
-}
-
-
-
-void Quadcopter::SetPinAsInput(volatile uint8_t *DDR, const unsigned char pin_number){
-    Binary::clearBit(DDR, pin_number);
-}
-
-void Quadcopter::SetPinAsOutput(volatile uint8_t *DDR, const unsigned char pin_number){
-    Binary::setBit(DDR, pin_number);
-}

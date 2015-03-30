@@ -14,7 +14,6 @@
 #include "MotionSensors.h"
 
 
-
 typedef struct{
     //! Last process value, used to find derivative of process value.
     int16_t lastProcessValue;
